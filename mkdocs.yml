@@ -12,6 +12,7 @@ nav:
     - What is ChemGymRL?: WhatIsChemGymRL.md
     - Installation: Installation.md
     - Using Command Line: UsingCmdLine.md
+    - Using Jenkins: jenkins.md
     - Directory: Directory.md
     - Quick Start: QuickStart.md
 - User Manual:  
@@ -24,8 +25,11 @@ nav:
     - Troubleshooting: Troubleshooting.md
     - Examples of RL algoritm and Results: RLalgo.md
 - Tutorials:
-    - 1  Reaction Bench Tutorial: Tutorial1.md
-    - 2  Extraction Bench Tutorial: Tutorial2.md
-    - 3  Distillation Bench Tutorial: Tutorial3.md 
+    - Reaction Bench Tutorial: lesson_1_react.md
+    - Custom Reaction Lesson: custom_reaction_lesson.md
+    - Vessel Lesson: vessel_lesson.md
+    - Extraction Bench Tutorial: lesson_1_extract.md
+    - Custom Extraction Lesson: custom_extraction_lesson.md
+    - Distillation Bench Tutorial: Tutorial3.md 
 - Contact Us: Contact.md
 - Citation and Licence: License.md
