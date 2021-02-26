@@ -8,7 +8,7 @@ In order to start with creating an environment for this reaction we first have t
 the mechanics of this decomposition. </br></br> In the directory ```chemistrylab/reactions``` you will find a list of
 reactions that looks something like this:
 
-![list of reactions](../../sample_figures/tutorial/reaction_list.png)
+![list of reactions](../sample_figures/tutorial/reaction_list.png)
 
 For this case we will create a new reaction file from the reaction template file ```template_reaction.py```,
 and let's name it ```decomp_reaction.py```.
