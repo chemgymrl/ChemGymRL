@@ -1,2 +1,2 @@
-Welcome to RLChemistry's documentation!
+Welcome to ChemGymRL's documentation!
 =======================================
