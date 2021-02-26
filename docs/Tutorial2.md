@@ -1,2 +1,1 @@
-Extraction Bench Tutorial
-=========================
+## Extraction Bench Tutorial
