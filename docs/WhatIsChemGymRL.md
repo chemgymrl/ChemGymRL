@@ -1,1 +1,1 @@
-## What is RLChemistry?
+## What is ChemGymRL?

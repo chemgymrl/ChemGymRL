@@ -4,12 +4,12 @@ site_description: ChemGymRL supporting documentation.
 site_author: Isaac Tamblyn, Mark Crowley, Amanuel Dawit
 theme: readthedocs
 
-repo_url: https://github.com/CLEANit/chemistrygym/branches
+repo_url: https://github.com/chemgymrl/Documentation
 
 nav:
 - Home: index.md
 - Getting Started: 
-    - What is RLChemistry?: WhatisChemGymRL.md
+    - What is ChemGymRL?: WhatIsChemGymRL.md
     - Installation: Installation.md
     - Using Command Line: UsingCmdLine.md
     - Directory: Directory.md
