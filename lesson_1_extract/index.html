@@ -162,7 +162,7 @@ RL agent might interact with the envirionment. In this extraction we are going t
 chlorine from water. We are going to be using this file <code>lessons/extraction_bench/oil_water.py</code> in order to interact
 with the environment and to try and achieve a high reward!</p>
 <p>So start by running the <code>lessons/extraction_bench/oil_water.py</code> you should see a series of graphs like these appear:</p>
-<p><img alt="graph" src="../../sample_figures/tutorial/oil_and_water_0.png" /></p>
+<p><img alt="graph" src="../sample_figures/tutorial/oil_and_water_0.png" /></p>
 <p>These graphs show the contents of each of our containers and the level of seperation between the materials. The graphs
 to the right then show the layers of materials forming in the container.</p>
 <p>When we start the environment we will see that we have a container filled with water, Na and Cl. The objective of this
@@ -170,7 +170,7 @@ environment is to get the Na out of the water, but how might we do this? As the 
 very simple task, and indeed it is. Using a non-polar solvent we can get the sodium and chlorine to diffuse from the
 water into that solvent, in this case we can use oil as our non-polar solvent! so now that the environemnt is loaded,
 you should see a prompt in the command line. </p>
-<p><img alt="command line prompt" src="../../sample_figures/tutorial/oil_water_console_0.png" /></p>
+<p><img alt="command line prompt" src="../sample_figures/tutorial/oil_water_console_0.png" /></p>
 <p>Before we start playing around with the environment, let's take a look at
 the action space. For this case our action space is a matrix: {0, 1}<sup>n_action x multiplier</sup> in essence at each
 time step the RL agent selects from a set of actions and then in turn picks a multiplier for that action. </p>
@@ -227,17 +227,17 @@ water. Keep repeating the following command until the graph settles.</p>
 <p><img alt="image of graphs waiting " src="../sample_figures/tutorial/oil_and_water_3.png" /></p>
 <p>Now that the water and oil have settled we want to drain out our water into beaker 1 so that we can pour out our oil
 into vessel 2.</p>
-<p><img alt="image of command" src="../../sample_figures/tutorial/oil_water_console_4.png" /></p>
-<p><img alt="image of graphs draining" src="../../sample_figures/tutorial/oil_water_4.png" /></p>
+<p><img alt="image of command" src="../sample_figures/tutorial/oil_water_console_4.png" /></p>
+<p><img alt="image of graphs draining" src="../sample_figures/tutorial/oil_water_4.png" /></p>
 <p>Keep repeating the command the changing the multiplier as needed until the graph looks something like this:</p>
-<p><img alt="image of graphs draining" src="../../sample_figures/tutorial/oil_water_5.png" /></p>
+<p><img alt="image of graphs draining" src="../sample_figures/tutorial/oil_water_5.png" /></p>
 <p>Now we pour the oil into vessel 2.</p>
-<p><img alt="image of command" src="../../sample_figures/tutorial/oil_water_console_5.png" /></p>
-<p><img alt="image of graphs pouring" src="../../sample_figures/tutorial/oil_water_6.png" /></p>
+<p><img alt="image of command" src="../sample_figures/tutorial/oil_water_console_5.png" /></p>
+<p><img alt="image of graphs pouring" src="../sample_figures/tutorial/oil_water_6.png" /></p>
 <p>Now if we want to we can pour back the water from vessel 1 into our extraction vessel and repeat the process to get a
 more of the sodium out of the oil. However, for an introduction this much should satisfy, now that we have finished,
 we want to see how well we did so now we enter the done command.</p>
-<p><img alt="image of command" src="../../sample_figures/tutorial/oil_water_console_7.png" /></p>
+<p><img alt="image of command" src="../sample_figures/tutorial/oil_water_console_7.png" /></p>
 <p>We hope this tutorial helped with your understanding of how an agent might interact with the extraction environmenment!</p>
               
             </div>
