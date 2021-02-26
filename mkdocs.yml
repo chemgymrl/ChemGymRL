@@ -9,7 +9,7 @@ repo_url: https://github.com/CLEANit/chemistrygym/branches
 nav:
 - Home: index.md
 - Getting Started: 
-    - What is RLChemistry?: WhatisRLChemistry.md
+    - What is RLChemistry?: WhatisChemGymRL.md
     - Installation: Installation.md
     - Using Command Line: UsingCmdLine.md
     - Directory: Directory.md
