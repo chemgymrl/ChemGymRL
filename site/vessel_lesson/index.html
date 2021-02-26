@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Isaac Tamblyn, Mark Crowley, Amanuel Dawit">
-  <link rel="canonical" href="http://docs.ChemGymRL.org/Troubleshooting/">
+  <link rel="canonical" href="http://docs.ChemGymRL.org/vessel_lesson/">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Troubleshooting - RLChemistry Documentation</title>
+  <title>Vessel Lesson - RLChemistry Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Troubleshooting";
-    var mkdocs_page_input_path = "Troubleshooting.md";
-    var mkdocs_page_url = "/Troubleshooting/";
+    var mkdocs_page_name = "Vessel Lesson";
+    var mkdocs_page_input_path = "vessel_lesson.md";
+    var mkdocs_page_url = "/vessel_lesson/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
@@ -67,7 +67,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">User Manual</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../About/">About</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../input/">Input</a>
@@ -80,20 +80,30 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../Glossary/">Glossary</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Troubleshooting</a>
-    <ul class="current">
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting/">Troubleshooting</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../RLalgo/">Examples of RL algoritm and Results</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Tutorials</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../lesson_1_react/">Reaction Bench Tutorial</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../custom_reaction_lesson/">Custom Reaction Lesson</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../vessel_lesson/">Vessel Lesson</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Vessel Lesson</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview:</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#an-example-of-_material_dict-and-_solute_dict">An example of _material_dict and _solute_dict</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-workflow">The Workflow</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#event-functions">Event Functions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../lesson_1_extract/">Extraction Bench Tutorial</a>
                     </li>
@@ -131,14 +141,14 @@
     
       
         
-          <li>User Manual &raquo;</li>
+          <li>Tutorials &raquo;</li>
         
       
     
-    <li>Troubleshooting</li>
+    <li>Vessel Lesson</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/chemgymrl/Documentation/edit/master/docs/Troubleshooting.md"
+        <a href="https://github.com/chemgymrl/Documentation/edit/master/docs/vessel_lesson.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -149,7 +159,140 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="troubleshooting-hello">Troubleshooting Hello</h2>
+                <h2 id="vessel-lesson">Vessel: Lesson</h2>
+<h3 id="overview">Overview:</h3>
+<p>In this lesson, we will be going through a class that is vital to the operation of all of our benches, the vessel class.
+The source code for this can be found here: <code>chemistrylab/chem_algorithms/vessel.py</code>. The vessel calss as it is named is
+meant to simulate the use of any given you might find in a chemistry lad, such as a beaker or an extraction vessel.
+Here we will be going through the important concepts, functions and attributes that make up the vessel class so that you
+can easily use it when designing your own reactions.</p>
+<p>If you want a more detailed look into each function of the vessel I suggest you go to our <a href="">documentation</a> on the data
+structure. </p>
+<table>
+<thead>
+<tr>
+<th>Important Variables</th>
+<th>Structure</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_material_dict</td>
+<td>{'material.name': [material(), amount], ...}</td>
+<td>a dictionary holding all the material inside this vessel</td>
+</tr>
+<tr>
+<td>_solute_dict</td>
+<td>{'solute.name': {solvent.name: amount, ...}, ...}</td>
+<td>dictionary that represents the solution</td>
+</tr>
+<tr>
+<td>_event_dict</td>
+<td>{'function name': function}</td>
+<td>a dictionary holds the event functions of a vessel</td>
+</tr>
+<tr>
+<td>_event_queue</td>
+<td>[['event', parameters], ['event', parameters] ... ]</td>
+<td>a queue of events to be performed by vessel</td>
+</tr>
+<tr>
+<td>_feedback_queue</td>
+<td>[['event', parameters], ['event', parameters] ... ]</td>
+<td>a queue holding collected feedback from materials and unfinished events</td>
+</tr>
+</tbody>
+</table>
+<h4 id="an-example-of-_material_dict-and-_solute_dict">An example of _material_dict and _solute_dict</h4>
+<p>(vessel with Na and Cl dissolved in H2O and C6H14)</p>
+<pre><code class="language-bash">H2O = material.H2O()
+C6H14 = material.C6H14()
+Na = material.Na()
+Cl = material.Cl()
+
+Na.set_charge(1.0)
+Na.set_solute_flag(True)
+Cl.set_charge(-1.0)
+Cl.set_solute_flag(True)
+
+material_dict = {'H2O': [H2O, 100], 'C6H14': [C6H14, 100], 'Na': [Na, 1.0], 'Cl': [Cl, 1.0]}
+solute_dict = {'Na': {'H2O': 0.5, 'C6H14': 0.5}, 'Cl': {'H2O': 0.5, 'C6H14': 0.5}}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Important functions</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push_event_to_queue()</td>
+<td>used to pass event into the vessel</td>
+</tr>
+<tr>
+<td>_update_materials()</td>
+<td>automatically called by push_event_to_queue(), execute events in _event_queue and _feedback_queue</td>
+</tr>
+<tr>
+<td>_merge_event_queue()</td>
+<td>merge the feedback_queue passed in, and all the default events (switches) are appended to _feedback_queue by this function</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-workflow">The Workflow</h4>
+<ol>
+<li>Agent choose action from the action space of an environment.</li>
+<li>The environment does the calculation and update and generate events.</li>
+<li>At the end of each action, if the action affect a vessel, use push_event_to_queue() to push the event into the vessel, if no event generated, call the function with events=None.</li>
+<li>With push_event_to_queue() called, events are pushed into the vessel.</li>
+<li>_update_materials is automatically called and perform events in the events_queue.</li>
+<li>Each event has a corresponding event function, it first update properties of the vessel, then loop over the materials inside the vessel by calling the corresponding event functions of each material.</li>
+<li>The materials' event function will return feedback by calling the push_event_to_queue(), which contains feedback and unfinished event </li>
+<li>The returned feedback is added to the _feedback_queue</li>
+<li>The the _merge_event_queue() is called on _feedback_queue, which merge the events in the feedback_queue to generate a merged_queue and add default event into it, then empty the _feedback_queue</li>
+<li>Then the merged_queue will be executed and new feedback are collected and added to _feedback_queue, which will be executed with the next action. </li>
+</ol>
+<h4 id="event-functions">Event Functions</h4>
+<table>
+<thead>
+<tr>
+<th>Function Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>'pour by volume'</td>
+<td>Pour from self vessel to target vessel by certain volume</td>
+</tr>
+<tr>
+<td>'drain by pixel</td>
+<td>Drain from self vessel to target vessel by certain pixel</td>
+</tr>
+<tr>
+<td>'fully mix'</td>
+<td>Shake self vessel to fully mix</td>
+</tr>
+<tr>
+<td>'update material dict'</td>
+<td>Use input to update self vessel's material_dict</td>
+</tr>
+<tr>
+<td>'update solute dict'</td>
+<td>Use input to update self vessel's solute_dict</td>
+</tr>
+<tr>
+<td>'mix'</td>
+<td>Shake vessel of let vessel settle</td>
+</tr>
+<tr>
+<td>'update_layer'</td>
+<td>Update self vessel's layer representation</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
@@ -157,10 +300,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../RLalgo/" class="btn btn-neutral float-right" title="Examples of RL algoritm and Results">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../lesson_1_extract/" class="btn btn-neutral float-right" title="Extraction Bench Tutorial">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Glossary/" class="btn btn-neutral" title="Glossary"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../custom_reaction_lesson/" class="btn btn-neutral" title="Custom Reaction Lesson"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -188,10 +331,10 @@
           <a href="https://github.com/chemgymrl/Documentation/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../Glossary/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../custom_reaction_lesson/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../RLalgo/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../lesson_1_extract/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

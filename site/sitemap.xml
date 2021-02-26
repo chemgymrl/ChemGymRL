@@ -16,6 +16,10 @@
      <lastmod>2021-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
+     <loc>http://docs.ChemGymRL.org/jenkins/</loc>
+     <lastmod>2021-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
      <loc>http://docs.ChemGymRL.org/Directory/</loc>
      <lastmod>2021-02-26</lastmod>
      <changefreq>daily</changefreq>
@@ -56,11 +60,23 @@
      <lastmod>2021-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://docs.ChemGymRL.org/Tutorial1/</loc>
+     <loc>http://docs.ChemGymRL.org/lesson_1_react/</loc>
      <lastmod>2021-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>http://docs.ChemGymRL.org/Tutorial2/</loc>
+     <loc>http://docs.ChemGymRL.org/custom_reaction_lesson/</loc>
+     <lastmod>2021-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://docs.ChemGymRL.org/vessel_lesson/</loc>
+     <lastmod>2021-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://docs.ChemGymRL.org/lesson_1_extract/</loc>
+     <lastmod>2021-02-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>http://docs.ChemGymRL.org/custom_extraction_lesson/</loc>
      <lastmod>2021-02-26</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
