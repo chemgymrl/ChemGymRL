@@ -4,4 +4,4 @@
   github_token: af85cfce78d325769ae4fc0dc2e44fd5ce26bc36
   keep_history: true
   on:
-    branch: master
+    branch: main
