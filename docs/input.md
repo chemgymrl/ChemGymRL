@@ -1,3 +1,3 @@
 ## Input
 
-Hi lmao
+okay hi
