@@ -1,7 +1,15 @@
- deploy:
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm run build
+deploy:
   provider: pages
   skip_cleanup: true
   github_token: af85cfce78d325769ae4fc0dc2e44fd5ce26bc36
   keep_history: true
   on:
-    branch: gh-pages
+    branch: master
