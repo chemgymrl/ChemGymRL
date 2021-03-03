@@ -1,3 +1,1 @@
 ## Input
-
-nvm lol hi
