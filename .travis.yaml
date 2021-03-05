@@ -5,7 +5,6 @@ cache:
   directories:
   - node_modules
 script:
-  - cd chemgymrl
   - mkdocs deploy
 deploy:
   provider: pages
