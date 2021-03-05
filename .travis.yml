@@ -6,7 +6,7 @@ cache:
   - node_modules
 script:
   - pip install mkdocs
-  - mkdocs deploy
+  - mkdocs gh-deploy
 deploy:
   provider: pages
   skip_cleanup: true
