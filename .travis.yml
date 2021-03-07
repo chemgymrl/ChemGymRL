@@ -4,13 +4,9 @@ node_js:
 cache:
   directories:
   - node_modules
-before_script:
-  - git config --global user.email "amanou87@hotmail.com"
-  - git config --global user.name "Amanuel43"
-after_script:
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${0a043556ba09c1a910672050a1604f77d26f6d39}:@github.com" > .git/credentials
-  - node ./node_modules/grunt-cli/bin/grunt release
+script:
+  - pip install mkdocs
+  - mkdocs build
 deploy:
   provider: pages
   skip_cleanup: true
