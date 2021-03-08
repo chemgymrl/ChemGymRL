@@ -4,6 +4,10 @@ node_js:
 cache:
   directories:
   - node_modules
+script:
+  - pip install mkdocs
+  - mkdocs build
+  - mkdocs gh-deploy
 deploy:
   provider: pages
   skip_cleanup: true
