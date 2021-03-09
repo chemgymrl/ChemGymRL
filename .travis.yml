@@ -11,7 +11,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  GITHUB_TOKEN: $0c1e9986e839ff47a77a8874031286f9033c38b5
+  GITHUB_TOKEN: $d19a4a65f113a6bf87b40c8921fee71fcdc619a2
   keep_history: true
   local_dir: site
   target_branch: gh-pages
