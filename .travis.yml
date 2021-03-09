@@ -5,6 +5,7 @@ cache:
   directories:
   - node_modules
 script:
+  - git remote set-url git@github.com/chemgymrl/chemgymrl
   - pip install mkdocs
   - mkdocs build
   - mkdocs gh-deploy
