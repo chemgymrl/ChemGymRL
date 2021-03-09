@@ -19,4 +19,4 @@ deploy:
     repo: chemgymrl/chemgymrl
     branches:
       only: 
-        - main
+        - main 
