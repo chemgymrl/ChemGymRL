@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Isaac Tamblyn, Mark Crowley, Amanuel Dawit">
-  <link rel="canonical" href="http://docs.ChemGymRL.org/lesson_2_distillation/">
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Distillation Bench Tutorial, Lesson 2 - RLChemistry Documentation</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
@@ -25,7 +24,7 @@
   
   <script src="../js/jquery-2.1.1.min.js" defer></script>
   <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -36,7 +35,6 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href=".." class="icon icon-home"> RLChemistry Documentation</a>
         <div role="search">
@@ -47,81 +45,152 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Getting Started</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../WhatIsChemGymRL/">What is ChemGymRL?</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Installation/">Installation</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../UsingCmdLine/">Using Command Line</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../jenkins/">Using Jenkins</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Directory/">Directory</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../QuickStart/">Quick Start</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">User Manual</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../About/">About</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../input/">Input</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Output/">Output</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../VisualizingOutput/">Visualizing Output</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Developers/">Developers</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Glossary/">Glossary</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Troubleshooting/">Troubleshooting</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../RLalgo/">Examples of RL algoritm and Results</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Tutorials</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../lesson_1_react/">Reaction Bench Tutorial, Lesson 1</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../lesson_2_reaction/">Reaction Bench Tutorial, Lesson 2</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../custom_reaction_lesson/">Custom Reaction Lesson</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../vessel_lesson/">Vessel Lesson</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../lesson_1_extract/">Extraction Bench Tutorial</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../custom_extraction_lesson/">Custom Extraction Lesson</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../lesson_1_distillation/">Distillation Bench Tutorial, Lesson 1</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Distillation Bench Tutorial, Lesson 2</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#lets-try-increasing-the-temperature-of-the-boiling-vessel-action-1">Let's try increasing the temperature of the boiling vessel (ACTION 1)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#increasing-the-temperature-with-a-higher-multiplier-action-2">Increasing the temperature with a higher multiplier (ACTION 2)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#lower-the-temperature-action-3">Lower the temperature (ACTION 3)</a>
-    </li>
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Getting Started</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../WhatIsChemGymRL/">What is ChemGymRL?</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Installation/">Installation</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../UsingCmdLine/">Using Command Line</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../jenkins/">Using Jenkins</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Directory/">Directory</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../QuickStart/">Quick Start</a>
+                </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Contact/">Contact Us</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../License/">Citation and Licence</a>
-                    </li>
-                </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Manual</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../About/">About</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../input/">Input</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Output/">Output</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../VisualizingOutput/">Visualizing Output</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Developers/">Developers</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Glossary/">Glossary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Troubleshooting/">Troubleshooting</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../RLalgo/">Examples of RL algoritm and Results</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Tutorials</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lesson_1_react/">Reaction Bench Tutorial, Lesson 1</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson_2_reaction/">Reaction Bench Tutorial, Lesson 2</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../custom_reaction_lesson/">Custom Reaction Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../vessel_lesson/">Vessel Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson_1_extract/">Extraction Bench Tutorial</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../custom_extraction_lesson/">Custom Extraction Lesson</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lesson_1_distillation/">Distillation Bench Tutorial, Lesson 1</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Distillation Bench Tutorial, Lesson 2</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#distillation-bench-lesson-2">Distillation Bench: Lesson 2</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#lets-try-increasing-the-temperature-of-the-boiling-vessel-action-1">Let's try increasing the temperature of the boiling vessel (ACTION 1)</a></li>
+        
+            <li><a class="toctree-l4" href="#increasing-the-temperature-with-a-higher-multiplier-action-2">Increasing the temperature with a higher multiplier (ACTION 2)</a></li>
+        
+            <li><a class="toctree-l4" href="#lower-the-temperature-action-3">Lower the temperature (ACTION 3)</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Contact/">Contact Us</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../License/">Citation and Licence</a>
+	    </li>
+          
+        </ul>
       </div>
-    </div>
+      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -153,7 +222,6 @@
       
     </li>
   </ul>
-  
   <hr/>
 </div>
           <div role="main">
@@ -166,7 +234,7 @@
 - Decrease to the minimum temperature with a multiplier of 3</p>
 <p>We will see how these actions play out in the distillation bench environment and gain more intuition into how the distillation bench works.</p>
 <p>First let's start by importing all the required modules.</p>
-<pre><code class="language-python"># import all the required external modules
+<pre><code class="python"># import all the required external modules
 import gym
 import numpy as np
 import os
@@ -177,34 +245,40 @@ from gym import envs
 import matplotlib.pyplot as plt
 import pandas as pd
 </code></pre>
-<pre><code class="language-python"># ensure all necessary modules can be found
+
+<pre><code class="python"># ensure all necessary modules can be found
 sys.path.append(&quot;../&quot;) # to access chemistrylab
 sys.path.append(&quot;../chemistrylab/reactions&quot;) # to access all reactions
 </code></pre>
-<pre><code class="language-python"># import all local modules
+
+<pre><code class="python"># import all local modules
 import chemistrylab
 </code></pre>
-<pre><code class="language-python"># show all environments for distillation bench
+
+<pre><code class="python"># show all environments for distillation bench
 all_envs = envs.registry.all()
 env_ids = [env_spec.id for env_spec in all_envs if 'Distillation' in env_spec.id]
 print(env_ids)
 </code></pre>
+
 <pre><code>['Distillation-v0']
 </code></pre>
 <p>You'll notice that the setup is the same as in lesson 1. Nothing changes for the initialization in this project. The main difference is in the loop later.</p>
-<pre><code class="language-python"># allows user to pick which environment they want to use
+<pre><code class="python"># allows user to pick which environment they want to use
 # initializes environment
 select_env = int(input(f&quot;Enter a number to choose which environment you want to run (0 - {len(env_ids) - 1}): \n&quot;))
 env = gym.make(env_ids[select_env])
 render_mode = &quot;human&quot;
 </code></pre>
+
 <pre><code>Enter a number to choose which environment you want to run (0 - 0): 
 0
 </code></pre>
-<pre><code class="language-python">done = False
+<pre><code class="python">done = False
 __ = env.reset()
 print('\n')
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -239,13 +313,15 @@ print('\n')
 </tr>
 </tbody>
 </table>
-<pre><code class="language-python">
+<pre><code class="python">
 action_set = ['Add/Remove Heat', 'Pour BV into B1', 'Pour B1 into B2', 'Pour B1 into BV', 'Pour B2 into BV', 'Done']
 assert env.action_space.shape[0] == 2
 </code></pre>
-<pre><code class="language-python">total_steps=0
+
+<pre><code class="python">total_steps=0
 total_reward=0
 </code></pre>
+
 <p>Here we see that there are 3 main actions, where 2 are commented out. Based on which part of the lesson you're on, please uncomment the needed action.</p>
 <table>
 <thead>
@@ -273,7 +349,7 @@ total_reward=0
 </tr>
 </tbody>
 </table>
-<pre><code class="language-python">while not done:
+<pre><code class="python">while not done:
 
     # ACTION 1
     # increase temperature all the way up
@@ -315,30 +391,34 @@ total_reward=0
     #increment one step
     total_steps += 1
 </code></pre>
+
 <h3 id="lets-try-increasing-the-temperature-of-the-boiling-vessel-action-1">Let's try increasing the temperature of the boiling vessel (ACTION 1)</h3>
-<pre><code class="language-python"># ACTION 1
+<pre><code class="python"># ACTION 1
 # increase temperature all the way up
 action = np.array([0,6])
 </code></pre>
+
 <p>When we run this code we should see that for every timestep that there is a heat change of 19999.99 joules and that the 
 temperature eventually reaches 1738.0 Kelvin. We end up with a final graph that looks like this:</p>
 <p><img alt="graph" src="../sample_figures/lesson_2d_image1.PNG" /></p>
 <p>As you can see all the material is boiled off from the boiling vessel into the condensation vessel.</p>
 <p><strong>Again the graphs are showing the wrong values</strong></p>
 <h3 id="increasing-the-temperature-with-a-higher-multiplier-action-2">Increasing the temperature with a higher multiplier (ACTION 2)</h3>
-<pre><code class="language-python"># ACTION 2
+<pre><code class="python"># ACTION 2
 # results in temperature being too high and all material is boiled off in the vessel
 action = np.array([0,7])
 </code></pre>
+
 <p>For this we will uncomment action 2. Now running this code gives us an interesting result. Run it yourself to see that we will get:</p>
 <p><img alt="error" src="../sample_figures/lesson_2d_image3.PNG" /></p>
 <p>We get this error as since we increased the temperature by a higher multiplier we were able to boil off all the  materials in the boiling vessel before letting the agent finish after 20 steps. It's important to note that choosing a very large multiplier can result in this error. </p>
 <p><strong> Still need to fix this error </strong></p>
 <h3 id="lower-the-temperature-action-3">Lower the temperature (ACTION 3)</h3>
-<pre><code class="language-python"># ACTION 3
+<pre><code class="python"># ACTION 3
 # decrease temperature all the way down
 action = np.array([0,3])
 </code></pre>
+
 <p>We will now lower the temperature the absolute minimum it can be and see what happens. </p>
 <p>Running this results in the following graph:</p>
 <p><img alt="graph" src="../sample_figures/lesson_2d_image5.PNG" /></p>
@@ -366,7 +446,7 @@ action = np.array([0,3])
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -376,7 +456,7 @@ action = np.array([0,3])
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="versions">
+  <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/chemgymrl/Documentation/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -392,11 +472,6 @@ action = np.array([0,3])
     <script>var base_url = '..';</script>
     <script src="../js/theme.js" defer></script>
       <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
 
 </body>
 </html>
