@@ -7,6 +7,8 @@ cache:
 script:
   - pip install mkdocs
   - mkdocs build
+  - git fetch https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git
+  - git fetch https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages
   - mkdocs gh-deploy -v --clean --remote-name https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git 
   - git push https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages
 deploy:
