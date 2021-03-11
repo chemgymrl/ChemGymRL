@@ -11,7 +11,7 @@ script:
   - mkdocs gh-deploy -v --clean --remote-name https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git 
   - git push https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages
 deploy:
-  provider: pages
+  provider: pages 
   skip_cleanup: true
   github-token: $GITHUB_TOKEN
   keep_history: true
