@@ -1,21 +1,25 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-  - node_modules 
+  - node_modules
 script:
-  - pip install mkdocs
-  - mkdocs build
-  - git fetch https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git && git fetch https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages:gh-pages;
-  - mkdocs gh-deploy -v --clean --remote-name https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git 
-  - git push https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages
+- pip install mkdocs
+- mkdocs build
+- git fetch https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git && git fetch
+  https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages:gh-pages;
+- mkdocs gh-deploy -v --clean --remote-name https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git
+- git push https://${GITHUB_TOKEN}@github.com/chemgymrl/chemgymrl.git gh-pages
 deploy:
-  provider: pages 
+  provider: pages
   skip_cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep_history: true
   local_dir: site
   target_branch: gh-pages
   on:
-    branch: main  
+    branch: main
+env:
+  matrix:
+    secure: dcwggFDr/N68bMu7G+gxN3bcniUgWvyM9mI52e0HFEcFP9vPA+e07Lc8PCL/ARSuF+tDv8Mf51Ytfd7bXgy7S8l3i/WdoY1FpnOE8w/O/HtuGNFsjdrAx3Kqpd7ZNEZUJy/LVfVjHxL8nPzzBBY0GyAN34fAej3Gn3Z1jDgBP8SPG0BxEjwm+jq1nzaCgWwwvRAAWBkOiTEmnvYzBYPcdaj7hJ00Ku8TcWCtO27tOtExRiQH2UHgNGxh9wDcgpJm0Cwy9AEgBAwabsgXlEp2VTg+Ac7/Ff7Is5bMrG2ffJjyK0dEeM5ycNPQn7YPX09PW4cR6iVGSSRfgvgMuMoP6sJTvRnOdyuBdDrvBllY3D+bMSYG48Qx1KjUatYzdcTTvsn6W+6nFb9mJoN84C3GcRPQQWbuvJwb1xZG44SXJwqbGT5vlPuEGujGg4/CEkOhWXa9Ggmgc1vij40dlRXbOpY/q/uiVStyafqtqAoirmMc46pl40+Tg5O4pHjQV53v1GWSPbJOmURCAtijkpjd/9hnonh0seybZv5B0jI3FhtlGusowzhK2RbDxG/3jNeOPMtVO23XZcMv4RngMyqUEsYwzfSErbLXF+NtOkvjMZaExXhwFxDil2DRiZW8jKqSiCYepUUFeBcXTS7f8Ds3Ns8zCECYixiT980uXq8ggLE=
